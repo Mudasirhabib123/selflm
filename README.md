@@ -10,6 +10,15 @@ SelfLM is a compact language model designed to simulate a personal information a
 
 Trained from scratch on **60K synthetic conversations**, the entire pipeline can be executed in a Colab environment with a T4 GPU in approximately **5 minutes (~270 seconds)**. Despite its simplicity, the resulting model is lightweight enough to run efficiently even in browser-based environments.
 
+## 🔗 Quick Links
+
+[![HF Model](https://img.shields.io/badge/HF%20Model-SelfLM-blue)](https://huggingface.co/Mudasir-Habib/selflm-tiny-v1)
+[![HF Dataset](https://img.shields.io/badge/HF%20Dataset-selflm--dataset-blue)](https://huggingface.co/datasets/Mudasir-Habib/selflm-dataset)
+[![HF Demo](https://img.shields.io/badge/HF%20Demo-selflm--demo-blue)](https://huggingface.co/spaces/Mudasir-Habib/selflm-demo)
+
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1EyR5mFuHupJWdnJWazvdjU1Bre2rF2RD?usp=sharing)
+[![Vercel Demo](https://img.shields.io/badge/Vercel%20Demo-selflm--swagger-blue)](https://selflm.vercel.app/docs)
+
 
 # 🤖 SelfLM — Tiny LLM from Scratch
 
