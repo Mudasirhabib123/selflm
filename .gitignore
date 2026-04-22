@@ -1,0 +1,92 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.env/
+.env.*
+
+# -------------------------
+# OS files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Jupyter / Colab
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb
+
+# -------------------------
+# PyTorch / Model files
+# -------------------------
+*.pt
+*.pth
+*.bin
+*.ckpt
+
+# Ignore large checkpoints (keep structure only)
+checkpoints/*
+!checkpoints/.gitkeep
+
+# -------------------------
+# Dataset files (optional)
+# -------------------------
+dataset/*.jsonl
+dataset/tokenizer.json
+
+# If you want to keep small samples, comment above lines
+
+# -------------------------
+# Hugging Face cache
+# -------------------------
+.cache/
+huggingface/cache/
+
+# -------------------------
+# Build / dist
+# -------------------------
+build/
+dist/
+*.egg-info/
+
+# -------------------------
+# IDE
+# -------------------------
+.vscode/
+.idea/
+
+# -------------------------
+# Environment variables
+# -------------------------
+.env
+.env.local
+
+# -------------------------
+# ONNX / Vercel assets (large)
+# -------------------------
+vercel/assets/*.onnx
+vercel/assets/*.data
+
+# -------------------------
+# Temporary files
+# -------------------------
+*.tmp
+*.temp
+
+# -------------------------
+# macOS / Linux hidden
+# -------------------------
+.*
+!.gitignore
+!.env.example
