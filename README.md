@@ -1,15 +1,3 @@
-## ✨ Project Overview
-
-This project demonstrates that building a language model is far simpler than it often appears. Using just a single Colab notebook, you can go from raw text to a working model in minutes—covering data creation, tokenization, architecture design, training, and inference.
-
-The goal here isn’t massive scale, but genuine understanding. By implementing each component yourself, you gain clear insight into how everything fits together—removing the “black box” mystery behind modern large language models.
-
-## 🤖 About SelfLM
-
-SelfLM is a compact language model designed to simulate a personal information assistant. It generates concise responses about identity-related details such as contact information, professional background, social links, hobbies, preferences, and skills.
-
-Trained from scratch on **60K synthetic conversations**, the entire pipeline can be executed in a Colab environment with a T4 GPU in approximately **5 minutes (~270 seconds)**. Despite its simplicity, the resulting model is lightweight enough to run efficiently even in browser-based environments.
-
 ## 🔗 Quick Links
 
 [![HF Model](https://img.shields.io/badge/HF%20Model-SelfLM-blue)](https://huggingface.co/Mudasir-Habib/selflm-tiny-v1)
@@ -20,32 +8,25 @@ Trained from scratch on **60K synthetic conversations**, the entire pipeline can
 [![Vercel Demo](https://img.shields.io/badge/Vercel%20Demo-selflm--swagger-blue)](https://selflm.vercel.app/docs)
 
 
-# 🤖 SelfLM — Tiny LLM from Scratch
+## ✨ SelfLM — From Raw Text to a Working LLM in Minutes
 
-SelfLM is a **lightweight language model (LLM)** built from scratch using PyTorch and trained on a **synthetic instruction dataset**.
+Building a language model may seem complex, but it doesn’t have to be.
 
-This project demonstrates the **full LLM pipeline**:
+**SelfLM** is a compact language model built from scratch to demonstrate how the entire LLM pipeline—data generation, tokenization, architecture, training, and inference—works end-to-end. Instead of focusing on scale, this project emphasizes **clarity and understanding**, breaking down the “black box” behind modern LLMs.
 
-* Dataset generation
-* Tokenization
-* Model architecture
-* Training
-* Inference (CLI + Web)
-* Hugging Face deployment
-* ONNX export for production
+Trained on **60K synthetic conversations**, the model can be built in ~**5 minutes (~270 seconds)** on a Colab T4 GPU and is lightweight enough to run even in browser-based environments.
 
 ---
 
-# 🚀 Features
+## 🚀 Features
 
-* Custom Transformer-based LLM
+* Custom Transformer-based LLM (PyTorch)
 * Synthetic instruction dataset
 * Chat-style prompt formatting
-* CLI + Gradio + ONNX inference
-* Hugging Face Model + Dataset + Space
-* Vercel deployment support
+* CLI + Web (Gradio) inference
+* Hugging Face model, dataset & live demo
+* ONNX export for fast, serverless deployment (Vercel)
 
----
 
 # 📁 Project Structure
 
@@ -53,7 +34,6 @@ This project demonstrates the **full LLM pipeline**:
 .
 ├── checkpoints/        # Trained model checkpoints
 ├── dataset/            # Training + evaluation data
-├── hf_model/           # Hugging Face formatted model
 ├── huggingface/        # Scripts for HF export + Space
 ├── src/                # Core ML pipeline
 ├── vercel/             # ONNX deployment (serverless)
@@ -235,94 +215,41 @@ huggingface/selflm-demo/
 * Loads model from HF repo
 
 ---
+## ⚡ Vercel Deployment (Free, ONNX Optimized)
 
-# ⚡ Vercel Deployment (Free, ONNX Optimized)
+Deploy **SelfLM** on Vercel using a quantized ONNX model for fast, low-cost inference.
 
-SelfLM can be deployed on **Vercel** using a **quantized ONNX model**, enabling fast and cost-efficient inference on the free tier.
+**Assets**
 
-
-## 📦 ONNX Assets
-
-```id="onnx_tree"
+```
 vercel/assets/
 ├── model.onnx
 ├── model.onnx.data
 └── tokenizer.json
 ```
 
----
+**Flow**
+PyTorch → ONNX → Quantized → Serverless API
 
-## ⚙️ How it works
+**Deploy**
 
-* PyTorch model → converted to ONNX
-* ONNX model → optimized / quantized
-* Served via lightweight inference engine
-* Deployed as serverless API on Vercel
-
----
-
-## 🚀 Deploy to Vercel
-
-### 1. Install Vercel CLI
-
-```bash id="vercel_install"
+```bash
 npm i -g vercel
-```
-
----
-
-### 2. Navigate to Vercel folder
-
-```bash id="vercel_cd"
 cd vercel
-```
-
----
-
-### 3. Deploy
-
-```bash id="vercel_deploy"
 vercel
 ```
 
-Follow prompts:
+**Output**
 
-* Link project
-* Choose settings (default works)
-
----
-
-### 4. Done 🎉
-
-You’ll get:
-
-```id="vercel_url"
+```
 https://your-project.vercel.app
 ```
 
----
+**Engine**
+`vercel/inference/onnx_engine.py` (tokenization + ONNX runtime + decoding)
 
-## ⚡ Inference Engine
-
-```id="onnx_engine"
-vercel/inference/onnx_engine.py
-```
-
-Handles:
-
-* Tokenization
-* ONNX runtime execution
-* Decoding output
-
----
-
-## 💡 Notes
-
-* Quantized ONNX model enables **free-tier deployment**
-* Cold start latency may exist
-* Ideal for lightweight demos / APIs
-
----
+**Note**
+Free-tier friendly, but expect cold starts.
 
 # 🏃‍♂️ Full Pipeline (Step-by-Step)
 
@@ -492,59 +419,7 @@ git commit -m "update"
 git push
 ```
 
----
 
-# 🧠 How It Works
-
-1. Input → Tokenized
-2. Tokens → Transformer model
-3. Model → Next token prediction
-4. Loop → Generate sequence
-5. Decode → Text output
-
----
-
-# ⚠️ Limitations
-
-* Small model size
-* Synthetic dataset
-* Limited reasoning ability
-* CPU inference is slow
-
----
-
-# 🚀 Future Improvements
-
-* Larger dataset
-* Better tokenizer
-* Beam search / top-p sampling
-* Streaming responses
-* Full Hugging Face `PreTrainedModel` support
-
----
-
-# 👨‍💻 Author
-
-**Mudasir Habib**
-
----
-
-# ⭐ Contributing
-
-Feel free to:
-
-* Improve model
-* Optimize training
-* Enhance UI
-* Add features
-
----
-
-# 📜 License
-
-Apache 2.0
-
----
 
 # 🎯 Summary
 
